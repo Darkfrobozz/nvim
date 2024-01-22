@@ -1,0 +1,2 @@
+require("darkf")
+print("hello")
