@@ -8,10 +8,14 @@ require'lspconfig'.lua_ls.setup{
 	settings = {
 		Lua = {
 			diagnostics = {
-				globals = { 'vim', 'ls', 's', 'sn', 't', 'i', 'f', 'd', 'fmt', 'fmta', 'rep' }
+				globals = { 'vim' }
 			},
 			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
+				library = {
+					vim.api.nvim_get_runtime_file("", true),
+					"~/.local/share/nvim/lazy",
+				},
+				userThirdParty = "~/.local/share/nvim/lazy",
 				checkThirdParty = false,
 			}
 		}
