@@ -1,9 +1,13 @@
-vim.api.nvim_set_keymap('n', '<leader>e', ':Explore<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-e>', ':Explore<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-J>', ':terminal<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>q', ':bdelete!<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'b', ':bnext<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true})
+
+-- Capitalize
+vim.api.nvim_set_keymap('n', 'R', '~', { noremap = true, silent = true})
+
 
 
 --Window Open and close
@@ -25,25 +29,25 @@ vim.api.nvim_set_keymap('n', '<leader><down>', '<C-w><down>', { noremap = true, 
 -- Moving lines and blocks
 local map = vim.api.nvim_set_keymap
 
-map( "x", "<S-n>", "<Plug>GoVSMLeft", {} )
-map( "x", "<S-e>", "<Plug>GoVSMDown", {} )
-map( "x", "<S-i>", "<Plug>GoVSMUp", {} )
-map( "x", "<S-o>", "<Plug>GoVSMRight", {} )
+map( "x", "<A-left>", "<Plug>GoVSMLeft", {} )
+map( "x", "<A-down>", "<Plug>GoVSMDown", {} )
+map( "x", "<A-up>", "<Plug>GoVSMUp", {} )
+map( "x", "<A-right>", "<Plug>GoVSMRight", {} )
 
-map( "n", "<C-n>", "<Plug>GoNSDLeft", {} )
-map( "n", "<C-e>", "<Plug>GoNSDDown", {} )
-map( "n", "<C-i>", "<Plug>GoNSDUp", {} )
-map( "n", "<C-o>", "<Plug>GoNSDRight", {} )
+map( "n", "<C-left>", "<Plug>GoNSDLeft", {} )
+map( "n", "<C-down>", "<Plug>GoNSDDown", {} )
+map( "n", "<C-up>", "<Plug>GoNSDUp", {} )
+map( "n", "<C-right>", "<Plug>GoNSDRight", {} )
 
-map( "x", "<C-n>", "<Plug>GoVSDLeft", {} )
-map( "x", "<C-e>", "<Plug>GoVSDDown", {} )
-map( "x", "<C-i>", "<Plug>GoVSDUp", {} )
-map( "x", "<C-o>", "<Plug>GoVSDRight", {} )
+map( "x", "<C-left>", "<Plug>GoVSDLeft", {} )
+map( "x", "<C-down>", "<Plug>GoVSDDown", {} )
+map( "x", "<C-up>", "<Plug>GoVSDUp", {} )
+map( "x", "<C-right>", "<Plug>GoVSDRight", {} )
 
-map( "n", "<S-n>", "<Plug>GoNSMLeft", {} )
-map( "n", "<S-e>", "<Plug>GoNSMDown", {} )
-map( "n", "<S-i>", "<Plug>GoNSMUp", {} )
-map( "n", "<S-o>", "<Plug>GoNSMRight", {} )
+map( "n", "<A-left>", "<Plug>GoNSMLeft", {} )
+map( "n", "<A-down>", "<Plug>GoNSMDown", {} )
+map( "n", "<A-up>", "<Plug>GoNSMUp", {} )
+map( "n", "<A-right>", "<Plug>GoNSMRight", {} )
 
 vim.api.nvim_create_user_command(
     'Run',

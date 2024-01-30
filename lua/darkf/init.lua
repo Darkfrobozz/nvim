@@ -9,7 +9,7 @@ require('darkf.after.telescope')
 require('darkf.after.luasnip-config')
 require('darkf.after.gomove')
 
-require("luasnip.loaders.from_lua").load( { paths = "~/.config/nvim/LuaSnip/" } )
+require("luasnip.loaders.from_lua").load( { paths = { "~/.config/nvim/LuaSnip/", } } )
 
 vim.opt_global.tabstop=4
 vim.opt_global.relativenumber=true
