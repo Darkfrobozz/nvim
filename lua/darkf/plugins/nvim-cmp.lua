@@ -1,3 +1,30 @@
+local symbol_map = {
+	Text = "\u{2018}",
+	Method = "\u{21EA}",
+	Function = "\u{0192}",
+	Constructor = "\u{263C}",
+	Field = "\u{2B58}",
+	Variable = "x",
+	Class = "\u{25EB}",
+	Interface = "\u{2567}",
+	Module = "\u{25A1}",
+	Property = "\u{25A3}",
+	Unit = "u",
+	Value = "\u{0031}",
+	Enum = "\u{EE10}",
+	Keyword = "#",
+	Snippet = "\u{203A}",
+	Color = "\u{2022}",
+	File = "\u{EE04}",
+	Reference = "->",
+	Folder = "<>",
+	EnumMember = "\u{EE0B}",
+	Constant = "\u{238B}",
+	Struct = "\u{25CD}",
+	Event = "!",
+	Operator = "\u{2716}",
+	TypeParameter = "\u{2387}",
+}
 local M = {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
@@ -43,6 +70,12 @@ M.config = function()
 			{ name = "buffer" },
 			{ name = "path" },
 		}),
+		formatting = {
+			format = function(_, vim_item)
+				vim_item.kind = (symbol_map[vim_item.kind] or "") .. " " .. vim_item.kind
+				return vim_item
+			end,
+		}
 	})
 
 	cmp.setup.cmdline(":", {
@@ -56,3 +89,4 @@ M.config = function()
 end
 
 return M
+
