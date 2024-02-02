@@ -1,1 +1,1 @@
-return { 'rose-pine/neovim', name = 'rose-pine' }
+return { "savq/melange-nvim" }

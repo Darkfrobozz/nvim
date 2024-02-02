@@ -17,4 +17,4 @@ LSPS:
 - tsserver (prob good to also have npm, nvm, node)
 - pyright
 - marksman
-- lua_ls
+- luals
