@@ -8,8 +8,6 @@ vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = 
 -- Capitalize
 vim.api.nvim_set_keymap('n', 'R', '~', { noremap = true, silent = true})
 
-
-
 --Window Open and close
 vim.api.nvim_set_keymap('n', '<leader><Esc>', '<C-w>q', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>s', { noremap = true, silent = true})
@@ -48,6 +46,24 @@ map( "n", "<A-left>", "<Plug>GoNSMLeft", {} )
 map( "n", "<A-down>", "<Plug>GoNSMDown", {} )
 map( "n", "<A-up>", "<Plug>GoNSMUp", {} )
 map( "n", "<A-right>", "<Plug>GoNSMRight", {} )
+
+-- Rectanglur visual selection
+
+vim.api.nvim_set_keymap('n', '<C-v>', '<C-q>', { noremap = true, silent = true})
+
+-- Copying and pasting from clipboard
+
+-- Copying
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>Y', '"+yg', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>yy', '"+yy', { noremap = true, silent = true})
+
+-- Pasting
+vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>P', '"+P', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<leader>p', '"+p', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<leader>P', '"+P', { noremap = true, silent = true})
 
 vim.api.nvim_create_user_command(
     'Run',
