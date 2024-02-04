@@ -49,6 +49,9 @@ map( "n", "<A-right>", "<Plug>GoNSMRight", {} )
 
 -- Rectanglur visual selection
 
+vim.api.nvim_set_keymap('n', '<leader>#', ':noh<CR>', { noremap = true, silent = true})
+-- Rectanglur visual selection
+
 vim.api.nvim_set_keymap('n', '<C-v>', '<C-q>', { noremap = true, silent = true})
 
 -- Copying and pasting from clipboard

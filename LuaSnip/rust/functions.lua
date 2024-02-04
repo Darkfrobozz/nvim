@@ -4,5 +4,19 @@ return {
 		{
 			t("hello world")
 		}
-	)
+	),
+	s( { trig="fnr", desc="This is a snippet for function with return" }, -- adding a trigger and description
+		fmta( --adding a format string
+			[[
+			fn <>(<>) ->> <> {
+				<>
+			}
+			]],
+			{ i(1),
+			  i(2),
+			  i(3),
+			  i(4) } -- adding insert nodes if used
+		),
+		{  } -- More custom options
+	),
 }
