@@ -5,7 +5,7 @@ dap.adapters.gdb = {
   args = { "-i", "dap" }
 }
 
-dap.configurations.c = {
+dap.configurations.rust = {
   {
     name = "Launch",
     type = "gdb",
