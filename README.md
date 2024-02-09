@@ -18,3 +18,4 @@ LSPS:
 - pyright
 - marksman
 - luals
+- gdb v.14

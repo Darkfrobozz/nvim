@@ -19,4 +19,15 @@ return {
 		),
 		{  } -- More custom options
 	),
+	s( { trig="struct", desc="This is a snippet for creating a struct" }, -- adding a trigger and description
+		fmta( --adding a format string
+			[[
+			<> {
+				<>
+			}
+			]],
+			{ i(1), i(2) } -- adding insert nodes if used
+		),
+		{  } -- More custom options
+	)
 }
