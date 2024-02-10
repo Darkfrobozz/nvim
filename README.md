@@ -1,6 +1,7 @@
 ## Introduction
 This is my, darkfrobozz, neovim.
 
+
 ## Context
 I run this nvim in ubuntu wsl on a windows machine.
 That system is x64 based.

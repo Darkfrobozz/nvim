@@ -12,10 +12,10 @@ return {
 				<>
 			}
 			]],
-			{ i(1),
+			{ i(1, "name"),
 			  i(2),
 			  i(3),
-			  i(4) } -- adding insert nodes if used
+			  i(0) } -- adding insert nodes if used
 		),
 		{  } -- More custom options
 	),
@@ -26,7 +26,7 @@ return {
 				<>
 			}
 			]],
-			{ i(1), i(2) } -- adding insert nodes if used
+			{ i(1, "struct_name"), i(0) } -- adding insert nodes if used
 		),
 		{  } -- More custom options
 	)
