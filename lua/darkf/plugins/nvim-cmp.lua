@@ -1,30 +1,5 @@
-local symbol_map = {
-	Text = "\u{2018}",
-	Method = "\u{21EA}",
-	Function = "\u{0192}",
-	Constructor = "\u{263C}",
-	Field = "\u{2B58}",
-	Variable = "x",
-	Class = "\u{25EB}",
-	Interface = "\u{2567}",
-	Module = "\u{25A1}",
-	Property = "\u{25A3}",
-	Unit = "u",
-	Value = "\u{0031}",
-	Enum = "\u{EE10}",
-	Keyword = "#",
-	Snippet = "\u{203A}",
-	Color = "\u{2022}",
-	File = "\u{EE04}",
-	Reference = "->",
-	Folder = "<>",
-	EnumMember = "\u{EE0B}",
-	Constant = "\u{238B}",
-	Struct = "\u{25CD}",
-	Event = "!",
-	Operator = "\u{2716}",
-	TypeParameter = "\u{2387}",
-}
+local lspkind = require('lspkind')
+
 local M = {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
@@ -75,10 +50,19 @@ M.config = function()
 			{ name = "path" },
 		}),
 		formatting = {
-			format = function(_, vim_item)
-				vim_item.kind = (symbol_map[vim_item.kind] or "") .. " " .. vim_item.kind
+			format = lspkind.cmp_format({
+			  mode = 'symbol', -- show only symbol annotations
+			  maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+							 -- can also be a function to dynamically calculate max width such as 
+							 -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+			  ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+			  show_labelDetails = true, -- show labelDetails in menu. Disabled by defaults	
+			  -- The function below will be called before any actual modifications from lspkind
+			  -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+			  before = function (entry, vim_item)
 				return vim_item
-			end,
+			  end
+			})
 		}
 	})
 
