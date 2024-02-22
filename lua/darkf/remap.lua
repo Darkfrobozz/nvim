@@ -3,6 +3,7 @@ vim.api.nvim_set_keymap('n', '<C-J>', ':terminal<CR>', { noremap = true, silent 
 vim.api.nvim_set_keymap('n', '<leader>q', ':bdelete!<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'b', ':bnext<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'B', ':bprevious<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true})
 
 -- Capitalize
