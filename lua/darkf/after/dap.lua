@@ -1,3 +1,4 @@
+require("dapui").setup()
 local dap = require("dap")
 dap.adapters.gdb = {
   type = "executable",

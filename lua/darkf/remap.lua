@@ -25,6 +25,10 @@ vim.api.nvim_set_keymap('n', '<leader><left>', '<C-w><left>', { noremap = true, 
 vim.api.nvim_set_keymap('n', '<leader><up>', '<C-w><up>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader><down>', '<C-w><down>', { noremap = true, silent = true})
 
+--workspace
+local workspace = require("workspace");
+vim.keymap.set('n', '<leader>ps', workspace.tmux_sessions)
+
 -- Moving lines and blocks
 local map = vim.api.nvim_set_keymap
 
@@ -77,23 +81,31 @@ vim.api.nvim_create_user_command(
     { nargs = 1}
 )
 
---Debugging
+--Debugging movements
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
-vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
-vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+vim.keymap.set('n', '<F12>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<leader><F12>', function() require('dap').step_out() end)
+
+--Breakpoints, setting, toggling, etc
 vim.keymap.set('n', '<F6>', function() require('dap').toggle_breakpoint() end)
-vim.keymap.set('n', '<F7>', function() require('dap').set_breakpoint() end)
-vim.keymap.set('n', '<F2>', function()
-	require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-vim.keymap.set('n', '<F8>', function() require('dap').repl.open() end)
-vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
-  require('dap.ui.widgets').hover()
-end)
-vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
-  require('dap.ui.widgets').preview()
-end)
+vim.keymap.set('n', '<F7>', function()
+		require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
+	end)
+vim.keymap.set('n', '<leader><F7>', function()
+		require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+	end)
+--Opening menu
+vim.keymap.set('n', '<leader>dr', function() require('dap').repl.open() end)
+
+
+--vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+--vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+--  require('dap.ui.widgets').hover()
+--end)
+--vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+--  require('dap.ui.widgets').preview()
+--end)
 
 -- Some weird stuff going on with these :
 vim.keymap.set('n', '<Leader>df', function()
