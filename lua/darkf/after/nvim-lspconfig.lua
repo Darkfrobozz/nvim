@@ -74,6 +74,7 @@ require'lspconfig'.lua_ls.setup{
 require'lspconfig'.marksman.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.gleam.setup{}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
