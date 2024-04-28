@@ -9,8 +9,8 @@ require('darkf.after.telescope')
 require('darkf.after.luasnip-config')
 require('darkf.after.gomove')
 require('darkf.after.outline')
-require('darkf.after.dap')
 require('darkf.after.treesitter')
+require("elixir").setup()
 
 require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/LuaSnip/", } })
 
